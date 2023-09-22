@@ -1,0 +1,33 @@
+          [DBG]: User 1 initialization
+          [DBG]: call transferX(msg_sender:1, msg_receiver:0, 1)
+          [DBG]: transferX(msg_sender:1, msg_receiver:0, 1)
+          [DBG]: call approveX(msg_sender:1, msg_spender:1, 1)
+          [DBG]: call approveX(msg_sender:1, msg_spender:1, 1)
+          [DBG]: call approveX(msg_sender:1, msg_spender:1, 1)
+          [DBG]: call transferX(msg_sender:1, msg_receiver:0, 1)
+          [DBG]: call transferX(msg_sender:1, msg_receiver:0, 1)
+          [DBG]: call transferX(msg_sender:1, msg_receiver:0, 1)
+          [DBG]: call swapXY(msg_sender:1, 1, 0, 0, 1, msg_receiver:1)
+          [DBG]: call swapXY(msg_sender:1, 1, 0, 0, 1, msg_receiver:1)
+          [DBG]: call swapXY(msg_sender:1, 1, 0, 0, 1, msg_receiver:1)
+spin: TokenLoss.pml:199, Error: assertion violated
+spin: text of failed assertion: assert(((balanceX[1]+balanceY[1])==2))
+spin: trail ends after 155 steps
+#processes: 3
+		balanceX[0] = 1
+		balanceX[1] = 0
+		balanceY[0] = 1
+		balanceY[1] = 1
+		allowanceX[0].Spender[0] = 0
+		allowanceX[0].Spender[1] = 0
+		allowanceX[1].Spender[0] = 0
+		allowanceX[1].Spender[1] = 0
+		allowanceY[0].Spender[0] = 0
+		allowanceY[0].Spender[1] = 0
+		allowanceY[1].Spender[0] = 0
+		allowanceY[1].Spender[1] = 0
+		deposited_flag = 1
+155:	proc  2 (User:1) TokenLoss.pml:134 (state 54)
+155:	proc  1 (Contract:1) TokenLoss.pml:262 (state 126)
+155:	proc  0 (:init::1) TokenLoss.pml:317 (state 4) <valid end state>
+3 processes created
