@@ -1,0 +1,41 @@
+PragmaDirective
+   Source: "pragma solidity ^0.5.0;"
+ContractDefinition "test"
+   Source: "contract test {\n\n  mapping(address => uint) public balances;\n\n\n\n  function testest() public {\n    balances[msg.sender] = 100;\n  }\n\n}"
+  VariableDeclaration "balances"
+     Type: mapping(address => uint256)
+     Source: "mapping(address => uint) public balances"
+    Mapping
+       Source: "mapping(address => uint)"
+      ElementaryTypeName address
+         Source: "address"
+      ElementaryTypeName uint
+         Source: "uint"
+  FunctionDefinition "testest" - public
+     Source: "function testest() public {\n    balances[msg.sender] = 100;\n  }"
+    ParameterList
+       Source: "()"
+    ParameterList
+       Source: ""
+    Block
+       Source: "{\n    balances[msg.sender] = 100;\n  }"
+      ExpressionStatement
+         Source: "balances[msg.sender] = 100"
+        Assignment using operator =
+           Type: uint256
+           Source: "balances[msg.sender] = 100"
+          IndexAccess
+             Type: uint256
+             Source: "balances[msg.sender]"
+            Identifier balances
+               Type: mapping(address => uint256)
+               Source: "balances"
+            MemberAccess to member sender
+               Type: address payable
+               Source: "msg.sender"
+              Identifier msg
+                 Type: msg
+                 Source: "msg"
+          Literal, token: [no token] value: 100
+             Type: int_const 100
+             Source: "100"

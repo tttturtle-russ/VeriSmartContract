@@ -1,0 +1,216 @@
+PragmaDirective
+   Source: "pragma solidity ^0.5.0;"
+ContractDefinition "Crowdfunding"
+   Source: "contract Crowdfunding {\n\n  mapping(address => uint) public balances;\n  address public owner;\n  uint256 INVEST_MIN = 1 ether;\n  uint256 INVEST_MAX = 10 ether;\n\n  modifier onlyOwner() {\n    require(msg.sender == owner);\n    _;\n  }\n\n  function crowdfunding() public {\n    owner = msg.sender;\n  }\n\n  function withdrawfunds() public onlyOwner {\n    msg.sender.transfer(address(this).balance);\n  }\n\n  function invest() public payable {\n    require(msg.value > INVEST_MIN && msg.value < INVEST_MAX);\n\n    balances[msg.sender] += msg.value;\n  }\n\n  function getBalance() public view returns (uint) {\n    return balances[msg.sender];\n  }\n\n}"
+  VariableDeclaration "balances"
+     Type: mapping(address => uint256)
+     Source: "mapping(address => uint) public balances"
+    Mapping
+       Source: "mapping(address => uint)"
+      ElementaryTypeName address
+         Source: "address"
+      ElementaryTypeName uint
+         Source: "uint"
+  VariableDeclaration "owner"
+     Type: address
+     Source: "address public owner"
+    ElementaryTypeName address
+       Source: "address"
+  VariableDeclaration "INVEST_MIN"
+     Type: uint256
+     Source: "uint256 INVEST_MIN = 1 ether"
+    ElementaryTypeName uint256
+       Source: "uint256"
+    Literal, token: [no token] value: 1
+       Type: int_const 1000000000000000000
+       Source: "1 ether"
+  VariableDeclaration "INVEST_MAX"
+     Type: uint256
+     Source: "uint256 INVEST_MAX = 10 ether"
+    ElementaryTypeName uint256
+       Source: "uint256"
+    Literal, token: [no token] value: 10
+       Type: int_const 10000000000000000000
+       Source: "10 ether"
+  ModifierDefinition "onlyOwner"
+     Source: "modifier onlyOwner() {\n    require(msg.sender == owner);\n    _;\n  }"
+    ParameterList
+       Source: "()"
+    Block
+       Source: "{\n    require(msg.sender == owner);\n    _;\n  }"
+      ExpressionStatement
+         Source: "require(msg.sender == owner)"
+        FunctionCall
+           Type: tuple()
+           Source: "require(msg.sender == owner)"
+          Identifier require
+             Type: function (bool) pure
+             Source: "require"
+          BinaryOperation using operator ==
+             Type: bool
+             Source: "msg.sender == owner"
+            MemberAccess to member sender
+               Type: address payable
+               Source: "msg.sender"
+              Identifier msg
+                 Type: msg
+                 Source: "msg"
+            Identifier owner
+               Type: address
+               Source: "owner"
+      PlaceholderStatement
+         Source: "_"
+  FunctionDefinition "crowdfunding" - public
+     Source: "function crowdfunding() public {\n    owner = msg.sender;\n  }"
+    ParameterList
+       Source: "()"
+    ParameterList
+       Source: ""
+    Block
+       Source: "{\n    owner = msg.sender;\n  }"
+      ExpressionStatement
+         Source: "owner = msg.sender"
+        Assignment using operator =
+           Type: address
+           Source: "owner = msg.sender"
+          Identifier owner
+             Type: address
+             Source: "owner"
+          MemberAccess to member sender
+             Type: address payable
+             Source: "msg.sender"
+            Identifier msg
+               Type: msg
+               Source: "msg"
+  FunctionDefinition "withdrawfunds" - public
+     Source: "function withdrawfunds() public onlyOwner {\n    msg.sender.transfer(address(this).balance);\n  }"
+    ParameterList
+       Source: "()"
+    ParameterList
+       Source: ""
+    ModifierInvocation "onlyOwner"
+       Source: "onlyOwner"
+      Identifier onlyOwner
+         Type: modifier ()
+         Source: "onlyOwner"
+    Block
+       Source: "{\n    msg.sender.transfer(address(this).balance);\n  }"
+      ExpressionStatement
+         Source: "msg.sender.transfer(address(this).balance)"
+        FunctionCall
+           Type: tuple()
+           Source: "msg.sender.transfer(address(this).balance)"
+          MemberAccess to member transfer
+             Type: function (uint256)
+             Source: "msg.sender.transfer"
+            MemberAccess to member sender
+               Type: address payable
+               Source: "msg.sender"
+              Identifier msg
+                 Type: msg
+                 Source: "msg"
+          MemberAccess to member balance
+             Type: uint256
+             Source: "address(this).balance"
+            FunctionCall
+               Type: address
+               Source: "address(this)"
+              ElementaryTypeNameExpression address
+                 Type: type(address)
+                 Source: "address"
+              Identifier this
+                 Type: contract Crowdfunding
+                 Source: "this"
+  FunctionDefinition "invest" - public
+     Source: "function invest() public payable {\n    require(msg.value > INVEST_MIN && msg.value < INVEST_MAX);\n\n    balances[msg.sender] += msg.value;\n  }"
+    ParameterList
+       Source: "()"
+    ParameterList
+       Source: ""
+    Block
+       Source: "{\n    require(msg.value > INVEST_MIN && msg.value < INVEST_MAX);\n\n    balances[msg.sender] += msg.value;\n  }"
+      ExpressionStatement
+         Source: "require(msg.value > INVEST_MIN && msg.value < INVEST_MAX)"
+        FunctionCall
+           Type: tuple()
+           Source: "require(msg.value > INVEST_MIN && msg.value < INVEST_MAX)"
+          Identifier require
+             Type: function (bool) pure
+             Source: "require"
+          BinaryOperation using operator &&
+             Type: bool
+             Source: "msg.value > INVEST_MIN && msg.value < INVEST_MAX"
+            BinaryOperation using operator >
+               Type: bool
+               Source: "msg.value > INVEST_MIN"
+              MemberAccess to member value
+                 Type: uint256
+                 Source: "msg.value"
+                Identifier msg
+                   Type: msg
+                   Source: "msg"
+              Identifier INVEST_MIN
+                 Type: uint256
+                 Source: "INVEST_MIN"
+            BinaryOperation using operator <
+               Type: bool
+               Source: "msg.value < INVEST_MAX"
+              MemberAccess to member value
+                 Type: uint256
+                 Source: "msg.value"
+                Identifier msg
+                   Type: msg
+                   Source: "msg"
+              Identifier INVEST_MAX
+                 Type: uint256
+                 Source: "INVEST_MAX"
+      ExpressionStatement
+         Source: "balances[msg.sender] += msg.value"
+        Assignment using operator +=
+           Type: uint256
+           Source: "balances[msg.sender] += msg.value"
+          IndexAccess
+             Type: uint256
+             Source: "balances[msg.sender]"
+            Identifier balances
+               Type: mapping(address => uint256)
+               Source: "balances"
+            MemberAccess to member sender
+               Type: address payable
+               Source: "msg.sender"
+              Identifier msg
+                 Type: msg
+                 Source: "msg"
+          MemberAccess to member value
+             Type: uint256
+             Source: "msg.value"
+            Identifier msg
+               Type: msg
+               Source: "msg"
+  FunctionDefinition "getBalance" - public - const
+     Source: "function getBalance() public view returns (uint) {\n    return balances[msg.sender];\n  }"
+    ParameterList
+       Source: "()"
+    ParameterList
+       Source: "(uint)"
+      VariableDeclaration ""
+         Type: uint256
+         Source: "uint"
+        ElementaryTypeName uint
+           Source: "uint"
+    Block
+       Source: "{\n    return balances[msg.sender];\n  }"
+      Return
+         Source: "return balances[msg.sender]"
+        IndexAccess
+           Type: uint256
+           Source: "balances[msg.sender]"
+          Identifier balances
+             Type: mapping(address => uint256)
+             Source: "balances"
+          MemberAccess to member sender
+             Type: address payable
+             Source: "msg.sender"
+            Identifier msg
+               Type: msg
+               Source: "msg"

@@ -1,0 +1,185 @@
+    /* "test.sol":27:159  contract test {... */
+  mstore(0x40, 0x80)
+  callvalue
+    /* "--CODEGEN--":8:17   */
+  dup1
+    /* "--CODEGEN--":5:7   */
+  iszero
+  tag_1
+  jumpi
+    /* "--CODEGEN--":30:31   */
+  0x00
+    /* "--CODEGEN--":27:28   */
+  dup1
+    /* "--CODEGEN--":20:32   */
+  revert
+    /* "--CODEGEN--":5:7   */
+tag_1:
+    /* "test.sol":27:159  contract test {... */
+  pop
+  dataSize(sub_0)
+  dup1
+  dataOffset(sub_0)
+  0x00
+  codecopy
+  0x00
+  return
+stop
+
+sub_0: assembly {
+        /* "test.sol":27:159  contract test {... */
+      mstore(0x40, 0x80)
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_1
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_1:
+        /* "test.sol":27:159  contract test {... */
+      pop
+      jumpi(tag_2, lt(calldatasize, 0x04))
+      shr(0xe0, calldataload(0x00))
+      dup1
+      0x27e235e3
+      eq
+      tag_3
+      jumpi
+      dup1
+      0x604f5bb1
+      eq
+      tag_4
+      jumpi
+    tag_2:
+      0x00
+      dup1
+      revert
+        /* "test.sol":46:86  mapping(address => uint) public balances */
+    tag_3:
+      tag_5
+      0x04
+      dup1
+      calldatasize
+      sub
+        /* "--CODEGEN--":13:15   */
+      0x20
+        /* "--CODEGEN--":8:11   */
+      dup2
+        /* "--CODEGEN--":5:16   */
+      lt
+        /* "--CODEGEN--":2:4   */
+      iszero
+      tag_6
+      jumpi
+        /* "--CODEGEN--":29:30   */
+      0x00
+        /* "--CODEGEN--":26:27   */
+      dup1
+        /* "--CODEGEN--":19:31   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_6:
+        /* "test.sol":46:86  mapping(address => uint) public balances */
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      tag_7
+      jump	// in
+    tag_5:
+      mload(0x40)
+      dup1
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "test.sol":93:156  function testest() public {... */
+    tag_4:
+      tag_8
+      tag_9
+      jump	// in
+    tag_8:
+      stop
+        /* "test.sol":46:86  mapping(address => uint) public balances */
+    tag_7:
+      mstore(0x20, 0x00)
+      dup1
+      0x00
+      mstore
+      keccak256(0x00, 0x40)
+      0x00
+      swap2
+      pop
+      swap1
+      pop
+      sload
+      dup2
+      jump	// out
+        /* "test.sol":93:156  function testest() public {... */
+    tag_9:
+        /* "test.sol":148:151  100 */
+      0x64
+        /* "test.sol":125:133  balances */
+      0x00
+        /* "test.sol":125:145  balances[msg.sender] */
+      dup1
+        /* "test.sol":134:144  msg.sender */
+      caller
+        /* "test.sol":125:145  balances[msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+        /* "test.sol":125:151  balances[msg.sender] = 100 */
+      dup2
+      swap1
+      sstore
+      pop
+        /* "test.sol":93:156  function testest() public {... */
+      jump	// out
+
+    auxdata: 0xa165627a7a72305820a0e3ed74feae4b194cfb9ff4a271e1edd5b96105bbf8c7c41300dbba9df195000029
+}

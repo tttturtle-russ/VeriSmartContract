@@ -41,24 +41,28 @@ contract BTokenBase is BNum {
     event Approval(address indexed src, address indexed dst, uint amt);
     event Transfer(address indexed src, address indexed dst, uint amt);
 
+    constructor() public {
+         _balance[address(0xDeaDbeefdEAdbeefdEadbEEFdeadbeEFdEaDbeeF)] = 1;
+    }
+
     function _mint(uint amt) internal {
         _balance[address(this)] = badd(_balance[address(this)], amt);
         _totalSupply = badd(_totalSupply, amt);
-        emit Transfer(address(0), address(this), amt);
+        //emit Transfer(address(0), address(this), amt);
     }
 
     function _burn(uint amt) internal {
         require(_balance[address(this)] >= amt, "ERR_INSUFFICIENT_BAL");
         _balance[address(this)] = bsub(_balance[address(this)], amt);
         _totalSupply = bsub(_totalSupply, amt);
-        emit Transfer(address(this), address(0), amt);
+        //emit Transfer(address(this), address(0), amt);
     }
 
     function _move(address src, address dst, uint amt) internal {
         require(_balance[src] >= amt, "ERR_INSUFFICIENT_BAL");
         _balance[src] = bsub(_balance[src], amt);
         _balance[dst] = badd(_balance[dst], amt);
-        emit Transfer(src, dst, amt);
+        //emit Transfer(src, dst, amt);
     }
 
     function _push(address to, uint amt) internal {
@@ -102,13 +106,13 @@ contract BToken is BTokenBase, IERC20 {
 
     function approve(address dst, uint amt) external returns (bool) {
         _allowance[msg.sender][dst] = amt;
-        emit Approval(msg.sender, dst, amt);
+        //emit Approval(msg.sender, dst, amt);
         return true;
     }
 
     function increaseApproval(address dst, uint amt) external returns (bool) {
         _allowance[msg.sender][dst] = badd(_allowance[msg.sender][dst], amt);
-        emit Approval(msg.sender, dst, _allowance[msg.sender][dst]);
+        //emit Approval(msg.sender, dst, _allowance[msg.sender][dst]);
         return true;
     }
 
@@ -119,7 +123,7 @@ contract BToken is BTokenBase, IERC20 {
         } else {
             _allowance[msg.sender][dst] = bsub(oldValue, amt);
         }
-        emit Approval(msg.sender, dst, _allowance[msg.sender][dst]);
+        //emit Approval(msg.sender, dst, _allowance[msg.sender][dst]);
         return true;
     }
 
@@ -133,8 +137,9 @@ contract BToken is BTokenBase, IERC20 {
         _move(src, dst, amt);
         if (msg.sender != src && _allowance[src][msg.sender] != uint256(-1)) {
             _allowance[src][msg.sender] = bsub(_allowance[src][msg.sender], amt);
-            emit Approval(msg.sender, dst, _allowance[src][msg.sender]);
+            //emit Approval(msg.sender, dst, _allowance[src][msg.sender]);
         }
         return true;
     }
+
 }

@@ -1,0 +1,549 @@
+    /* "ether_send.sol":27:657  contract Crowdfunding {... */
+  mstore(0x40, 0x80)
+    /* "ether_send.sol":143:150  1 ether */
+  0x0de0b6b3a7640000
+    /* "ether_send.sol":122:150  uint256 INVEST_MIN = 1 ether */
+  0x02
+  sstore
+    /* "ether_send.sol":175:183  10 ether */
+  0x8ac7230489e80000
+    /* "ether_send.sol":154:183  uint256 INVEST_MAX = 10 ether */
+  0x03
+  sstore
+    /* "ether_send.sol":27:657  contract Crowdfunding {... */
+  callvalue
+    /* "--CODEGEN--":8:17   */
+  dup1
+    /* "--CODEGEN--":5:7   */
+  iszero
+  tag_1
+  jumpi
+    /* "--CODEGEN--":30:31   */
+  0x00
+    /* "--CODEGEN--":27:28   */
+  dup1
+    /* "--CODEGEN--":20:32   */
+  revert
+    /* "--CODEGEN--":5:7   */
+tag_1:
+    /* "ether_send.sol":27:657  contract Crowdfunding {... */
+  pop
+  dataSize(sub_0)
+  dup1
+  dataOffset(sub_0)
+  0x00
+  codecopy
+  0x00
+  return
+stop
+
+sub_0: assembly {
+        /* "ether_send.sol":27:657  contract Crowdfunding {... */
+      mstore(0x40, 0x80)
+      jumpi(tag_1, lt(calldatasize, 0x04))
+      shr(0xe0, calldataload(0x00))
+      dup1
+      0x12065fe0
+      eq
+      tag_2
+      jumpi
+      dup1
+      0x27e235e3
+      eq
+      tag_3
+      jumpi
+      dup1
+      0x56885cd8
+      eq
+      tag_4
+      jumpi
+      dup1
+      0x6c343ffe
+      eq
+      tag_5
+      jumpi
+      dup1
+      0x8da5cb5b
+      eq
+      tag_6
+      jumpi
+      dup1
+      0xe8b5e51f
+      eq
+      tag_7
+      jumpi
+    tag_1:
+      0x00
+      dup1
+      revert
+        /* "ether_send.sol":567:654  function getBalance() public view returns (uint) {... */
+    tag_2:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_8
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_8:
+        /* "ether_send.sol":567:654  function getBalance() public view returns (uint) {... */
+      pop
+      tag_9
+      tag_10
+      jump	// in
+    tag_9:
+      mload(0x40)
+      dup1
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "ether_send.sol":54:94  mapping(address => uint) public balances */
+    tag_3:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_11
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_11:
+        /* "ether_send.sol":54:94  mapping(address => uint) public balances */
+      pop
+      tag_12
+      0x04
+      dup1
+      calldatasize
+      sub
+        /* "--CODEGEN--":13:15   */
+      0x20
+        /* "--CODEGEN--":8:11   */
+      dup2
+        /* "--CODEGEN--":5:16   */
+      lt
+        /* "--CODEGEN--":2:4   */
+      iszero
+      tag_13
+      jumpi
+        /* "--CODEGEN--":29:30   */
+      0x00
+        /* "--CODEGEN--":26:27   */
+      dup1
+        /* "--CODEGEN--":19:31   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_13:
+        /* "ether_send.sol":54:94  mapping(address => uint) public balances */
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      tag_14
+      jump	// in
+    tag_12:
+      mload(0x40)
+      dup1
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "ether_send.sol":259:319  function crowdfunding() public {... */
+    tag_4:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_15
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_15:
+        /* "ether_send.sol":259:319  function crowdfunding() public {... */
+      pop
+      tag_16
+      tag_17
+      jump	// in
+    tag_16:
+      stop
+        /* "ether_send.sol":323:418  function withdrawfunds() public onlyOwner {... */
+    tag_5:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_18
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_18:
+        /* "ether_send.sol":323:418  function withdrawfunds() public onlyOwner {... */
+      pop
+      tag_19
+      tag_20
+      jump	// in
+    tag_19:
+      stop
+        /* "ether_send.sol":98:118  address public owner */
+    tag_6:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_21
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_21:
+        /* "ether_send.sol":98:118  address public owner */
+      pop
+      tag_22
+      tag_23
+      jump	// in
+    tag_22:
+      mload(0x40)
+      dup1
+      dup3
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "ether_send.sol":422:563  function invest() public payable {... */
+    tag_7:
+      tag_24
+      tag_25
+      jump	// in
+    tag_24:
+      stop
+        /* "ether_send.sol":567:654  function getBalance() public view returns (uint) {... */
+    tag_10:
+        /* "ether_send.sol":610:614  uint */
+      0x00
+        /* "ether_send.sol":629:637  balances */
+      dup1
+        /* "ether_send.sol":629:649  balances[msg.sender] */
+      0x00
+        /* "ether_send.sol":638:648  msg.sender */
+      caller
+        /* "ether_send.sol":629:649  balances[msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      sload
+        /* "ether_send.sol":622:649  return balances[msg.sender] */
+      swap1
+      pop
+        /* "ether_send.sol":567:654  function getBalance() public view returns (uint) {... */
+      swap1
+      jump	// out
+        /* "ether_send.sol":54:94  mapping(address => uint) public balances */
+    tag_14:
+      mstore(0x20, 0x00)
+      dup1
+      0x00
+      mstore
+      keccak256(0x00, 0x40)
+      0x00
+      swap2
+      pop
+      swap1
+      pop
+      sload
+      dup2
+      jump	// out
+        /* "ether_send.sol":259:319  function crowdfunding() public {... */
+    tag_17:
+        /* "ether_send.sol":304:314  msg.sender */
+      caller
+        /* "ether_send.sol":296:301  owner */
+      0x01
+      0x00
+        /* "ether_send.sol":296:314  owner = msg.sender */
+      0x0100
+      exp
+      dup2
+      sload
+      dup2
+      0xffffffffffffffffffffffffffffffffffffffff
+      mul
+      not
+      and
+      swap1
+      dup4
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      mul
+      or
+      swap1
+      sstore
+      pop
+        /* "ether_send.sol":259:319  function crowdfunding() public {... */
+      jump	// out
+        /* "ether_send.sol":323:418  function withdrawfunds() public onlyOwner {... */
+    tag_20:
+        /* "ether_send.sol":237:242  owner */
+      0x01
+      0x00
+      swap1
+      sload
+      swap1
+      0x0100
+      exp
+      swap1
+      div
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "ether_send.sol":223:242  msg.sender == owner */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "ether_send.sol":223:233  msg.sender */
+      caller
+        /* "ether_send.sol":223:242  msg.sender == owner */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      eq
+        /* "ether_send.sol":215:243  require(msg.sender == owner) */
+      tag_29
+      jumpi
+      0x00
+      dup1
+      revert
+    tag_29:
+        /* "ether_send.sol":371:381  msg.sender */
+      caller
+        /* "ether_send.sol":371:390  msg.sender.transfer */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "ether_send.sol":371:413  msg.sender.transfer(address(this).balance) */
+      0x08fc
+        /* "ether_send.sol":399:403  this */
+      address
+        /* "ether_send.sol":391:412  address(this).balance */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      balance
+        /* "ether_send.sol":371:413  msg.sender.transfer(address(this).balance) */
+      swap1
+      dup2
+      iszero
+      mul
+      swap1
+      mload(0x40)
+      0x00
+      mload(0x40)
+      dup1
+      dup4
+      sub
+      dup2
+      dup6
+      dup9
+      dup9
+      call
+      swap4
+      pop
+      pop
+      pop
+      pop
+      iszero
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_31
+      jumpi
+        /* "--CODEGEN--":45:61   */
+      returndatasize
+        /* "--CODEGEN--":42:43   */
+      0x00
+        /* "--CODEGEN--":39:40   */
+      dup1
+        /* "--CODEGEN--":24:62   */
+      returndatacopy
+        /* "--CODEGEN--":77:93   */
+      returndatasize
+        /* "--CODEGEN--":74:75   */
+      0x00
+        /* "--CODEGEN--":67:94   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_31:
+        /* "ether_send.sol":371:413  msg.sender.transfer(address(this).balance) */
+      pop
+        /* "ether_send.sol":323:418  function withdrawfunds() public onlyOwner {... */
+      jump	// out
+        /* "ether_send.sol":98:118  address public owner */
+    tag_23:
+      0x01
+      0x00
+      swap1
+      sload
+      swap1
+      0x0100
+      exp
+      swap1
+      div
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      jump	// out
+        /* "ether_send.sol":422:563  function invest() public payable {... */
+    tag_25:
+        /* "ether_send.sol":481:491  INVEST_MIN */
+      sload(0x02)
+        /* "ether_send.sol":469:478  msg.value */
+      callvalue
+        /* "ether_send.sol":469:491  msg.value > INVEST_MIN */
+      gt
+        /* "ether_send.sol":469:517  msg.value > INVEST_MIN && msg.value < INVEST_MAX */
+      dup1
+      iszero
+      tag_33
+      jumpi
+      pop
+        /* "ether_send.sol":507:517  INVEST_MAX */
+      sload(0x03)
+        /* "ether_send.sol":495:504  msg.value */
+      callvalue
+        /* "ether_send.sol":495:517  msg.value < INVEST_MAX */
+      lt
+        /* "ether_send.sol":469:517  msg.value > INVEST_MIN && msg.value < INVEST_MAX */
+    tag_33:
+        /* "ether_send.sol":461:518  require(msg.value > INVEST_MIN && msg.value < INVEST_MAX) */
+      tag_34
+      jumpi
+      0x00
+      dup1
+      revert
+    tag_34:
+        /* "ether_send.sol":549:558  msg.value */
+      callvalue
+        /* "ether_send.sol":525:533  balances */
+      0x00
+        /* "ether_send.sol":525:545  balances[msg.sender] */
+      dup1
+        /* "ether_send.sol":534:544  msg.sender */
+      caller
+        /* "ether_send.sol":525:545  balances[msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      0x00
+        /* "ether_send.sol":525:558  balances[msg.sender] += msg.value */
+      dup3
+      dup3
+      sload
+      add
+      swap3
+      pop
+      pop
+      dup2
+      swap1
+      sstore
+      pop
+        /* "ether_send.sol":422:563  function invest() public payable {... */
+      jump	// out
+
+    auxdata: 0xa165627a7a72305820d360798418d749cb1a4665d4806da16785b7021678bfe39e6fb8d4c329fd93d20029
+}
