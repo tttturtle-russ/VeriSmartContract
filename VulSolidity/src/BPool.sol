@@ -335,12 +335,20 @@ contract BPool is BBronze, BToken, BMath {
     }
 
     // 用BToken代替ERC20
-    function gulp_A() {
+    function gulp_A()
+        external
+        _logs_
+        _lock_
+    {
         require(_records[address(A)].bound, "ERR_NOT_BOUND");
         _records[address(A)].balance = A.balanceOf(address(this));
     }
 
-    function gulp_B() {
+    function gulp_B() 
+        external
+        _logs_
+        _lock_
+    {
         require(_records[address(B)].bound, "ERR_NOT_BOUND");
         _records[address(B)].balance = B.balanceOf(address(this));
     }
