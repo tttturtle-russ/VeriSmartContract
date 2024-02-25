@@ -4,7 +4,7 @@
 #define MAXUSER 2
 
 
-// ltl liveness {[]<> (balanceX[Alice] + balanceY[Alice] == 2)}
+ltl liveness {[] (deposited_flag -> <>(balanceX[Alice] + balanceY[Alice] == 2))}
 // ltl test {[] (q==1)}
 
 typedef ALLOWANCE{
