@@ -6,7 +6,7 @@ contract myToken {
   mapping(address => uint) public balances;
 
     constructor() public {
-        balances[address(0xDeaDbeefdEAdbeefdEadbEEFdeadbeEFdEaDbeeF)] = 1;
+        balances[address(0xDeaDbeefdEAdbeefdEadbEEFdeadbeEFdEaDbeeF)] = 2;
     }
 
   function deposit() public {
@@ -20,7 +20,7 @@ contract myToken {
 }
 
 
-contract myPool {
+contract Pool {
 
     myToken token_1 = new myToken();
 
