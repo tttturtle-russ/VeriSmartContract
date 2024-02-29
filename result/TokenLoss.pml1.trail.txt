@@ -14,8 +14,8 @@ spin: TokenLoss.pml:199, Error: assertion violated
 spin: text of failed assertion: assert(((balanceX[1]+balanceY[1])==2))
 spin: trail ends after 155 steps
 #processes: 3
-		balanceX[0] = 1
-		balanceX[1] = 0
+		balanceX[0] = 0
+		balanceX[1] = 1
 		balanceY[0] = 1
 		balanceY[1] = 1
 		allowanceX[0].Spender[0] = 0
